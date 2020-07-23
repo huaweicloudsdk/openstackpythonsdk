@@ -41,7 +41,7 @@ class Instance(_rdsresource.Resource):
     created = resource.Body('created')
     #: Host name of the instance
     hostname = resource.Body('hostname')
-    #: Instance type readreplica/master/slave
+    #: Instance type readreplica/main/subordinate
     type = resource.Body('type')
     #: Region
     region = resource.Body('region')
@@ -68,7 +68,7 @@ class Instance(_rdsresource.Resource):
     #: Backup Strategy
     #: *Type: dict*
     backupStrategy = resource.Body('backupStrategy', type=dict)
-    #: Id of the master
+    #: Id of the main
     replica_of = resource.Body('replica_of')
     #: HA information
     #: *Type: dict*
@@ -118,7 +118,7 @@ class InstanceParameter(_rdsresource.Resource):
     #: These Parameters requires restart
     #: *Type: int*
     shouldRestart = resource.Body('shouldRestart', type=int)
-    #: Set parameter result, 1, master success; 0; all success
+    #: Set parameter result, 1, main success; 0; all success
     #: *Type: int*
     setParameteResult = resource.Body('setParameteResult', type=int)
 
